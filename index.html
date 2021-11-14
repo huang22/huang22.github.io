@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/11/14/ads%20allocation/" itemprop="url">搞点技术</a></h1>
+                <a class="post-title-link" href="/2021/11/14/ads%20allocation/" itemprop="url">ads allocation</a></h1>
         
 
         <div class="post-meta">
@@ -352,7 +352,7 @@
       
         
           
-            <h1 id="ads-allocation"><a href="#ads-allocation" class="headerlink" title="ads allocation"></a>ads allocation</h1><ul>
+            <h1 id="paper"><a href="#paper" class="headerlink" title="paper"></a>paper</h1><ul>
 <li>Ads Allocation in Feed via Constrained Optimization</li>
 <li>Cross DQN: Cross Deep Q Network for Ads Allocation in Feed</li>
 </ul>
@@ -365,14 +365,14 @@
 </ol>
 <h2 id="RL-based"><a href="#RL-based" class="headerlink" title="RL-based"></a>RL-based</h2><p>因为展示给用户的结果是一条接着一条的，也就是一个队列的形式，所以最近的动态ads allocation策略通常会把这个问题看作是Markov Decision Process（MDP）。既然是一个MDP问题，那么就很理所当然可以采用强化学习来解决。</p>
 <p>在cross DQN这篇文章中，作者们不但考虑了整体收益的目标，同时也考虑了广告曝光占比（percentage of ads exposed，PAE）的限制。因为在结果页展示越多的广告，毫无疑问可能带来越多的收益，但是同时也会对用户体验造成负面影响。因此，应该在用户体验与平台收益之间做一个平衡，这个平衡就由PAE限制来保证。</p>
-<p>因为加入了PAE的限制，所以前面说的MDP问题就转成了Constrained Markov Decision Process（CMDP）问题，问题可以由<img src="http://latex.codecogs.com/svg.latex?(%5Cmathit%7BS,A,r,P,%5Cgamma,C%7D)">表示，中各元素的定义为：</p>
+<p>因为加入了PAE的限制，所以前面说的MDP问题就转成了Constrained Markov Decision Process（CMDP）问题，问题可以由$(\mathit{S,A,r,P,\gamma,C})$表示，中各元素的定义为：</p>
 <ol>
-<li>State space <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BS%7D">：当前步可填入的候选元素（包括ads、自然结果、用户、上下文等等）</li>
-<li>Action space <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BA%7D">：决定要不要在当前步展示广告，1表示展示，0表示不展示。</li>
-<li>Reward <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7Br%7D">：由用户行为来决定在一个state采取某个action的奖励，奖励=收益+ a*用户体验；用户体验为0（不点击），1（点击不下单），2（点击且下单）</li>
-<li>Transition probability <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BP%7D"></li>
-<li>Discount factor <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7B%5Cgamma%7D">：<img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7B%5Cgamma%7D%5Cin%5B0,1%5D">用来平衡长期和短期的奖励。</li>
-<li>Constraint <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BC%7D">：一个时间段内的广告曝光占比限制，<img src="http://latex.codecogs.com/svg.latex?%7CPAE-%5Cdelta%7C%3C%5Cvarepsilon">.</li>
+<li>State space $\mathit{S}$：当前步可填入的候选元素（包括ads、自然结果、用户、上下文等等）</li>
+<li>Action space $\mathit{A}$：决定要不要在当前步展示广告，1表示展示，0表示不展示。</li>
+<li>Reward $\mathit{r}$：由用户行为来决定在一个state采取某个action的奖励，奖励=收益+ a*用户体验；用户体验为0（不点击），1（点击不下单），2（点击且下单）</li>
+<li>Transition probability $\mathit{P})</li>
+<li>Discount factor $\mathit{\gamma}$：$\mathit{\gamma}\in[0,1]$用来平衡长期和短期的奖励。</li>
+<li>Constraint $\mathit{C}$：一个时间段内的广告曝光占比限制，$|PAE-\delta|&lt;\varepsilon$.</li>
 </ol>
 
           
@@ -597,6 +597,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
