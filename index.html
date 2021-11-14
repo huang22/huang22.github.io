@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://huang22.github.io/2021/10/12/%E6%90%9E%E7%82%B9%E6%8A%80%E6%9C%AF/">
+    <link itemprop="mainEntityOfPage" href="http://huang22.github.io/2021/11/14/ads%20allocation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/10/12/%E6%90%9E%E7%82%B9%E6%8A%80%E6%9C%AF/" itemprop="url">搞点技术</a></h1>
+                <a class="post-title-link" href="/2021/11/14/ads%20allocation/" itemprop="url">搞点技术</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-10-12T22:53:08+08:00">
-                2021-10-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-11-14T13:21:08+08:00">
+                2021-11-14
               </time>
             
 
@@ -352,15 +352,28 @@
       
         
           
-            <h1 id="Neural-Search"><a href="#Neural-Search" class="headerlink" title="Neural Search"></a>Neural Search</h1><p>Neural search，直接翻译成中文的话，就是神经搜索。最近跟别人说起“神经搜索”的时候，大家总会迅速想到NAS (network architecture search)。但是，即使这两个都是search，它们也不是一样的东西。因此，我一般就直接用英文的neural search来表示我最近的工作。</p>
-<p>Neural search在学术界也被叫做neural information retrieval。从名字我们就可以看出来，这是在深度学习时代，信息检索这棵老树上长出来的新花。主要就是使用一些更为前沿的神经网络相关的技术，来完成信息检索任务。</p>
-<p>现在的search架构一般都分为三个环节：</p>
-<ol>
-<li>query processing：对用户问题进行分析，包括query rewrite、query understanding以及query expansion等等。</li>
-<li>retrieval：召回环节。在此环节中，系统需要根据用户的问题，从非常大的文档集中找到top N相关的文档。</li>
-<li>re-ranking：重排序环节。上一轮得到的top N的文档，在此环节中进行重新派项目，把用户更可能想要的文档尽可能排在前面。</li>
+            <h1 id="ads-allocation"><a href="#ads-allocation" class="headerlink" title="ads allocation"></a>ads allocation</h1><ul>
+<li>Ads Allocation in Feed via Constrained Optimization</li>
+<li>Cross DQN: Cross Deep Q Network for Ads Allocation in Feed</li>
+</ul>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在现在的搜索或者推荐场景中，经常会出现需要将广告队列与搜索的自然结果或者推荐的内容进行混排（rerank）。其中，搜索的自然结果队列或者是推荐的自然队列就被称为organic items。</p>
+<p>organic items和ads的混排是由来已久的一项工作，按照广告位的是否固定，可以分成固定广告位策略和动态广告位策略。前者是十分好理解的，也就是在固定的位置出广告，剩下的位置填充自然结果。但是这种方法很难达到更高的收益。因为同一个APP内，广告位都是固定的，那么用户可能就会培养出来一种习惯，很自然的忽略掉相关的广告。于是，后者成为了现在各大搜索和推荐平台必不可少的一个模块。</p>
+<p>动态广告位策略按照是否采用了强化学习（reinforcement learning），可以分成non RL-based和RL-based两种。下面主要根据LinkedIn和美团的两篇论文，讲讲这两种方法。</p>
+<h2 id="non-RL-based"><a href="#non-RL-based" class="headerlink" title="non RL-based"></a>non RL-based</h2><ol>
+<li>保持原队列顺序</li>
+<li>两队列打分异化，通过weight进行调整。</li>
 </ol>
-<p>因此，在此博客中，我们也将分成这么三个模块来学习与讨论search。</p>
+<h2 id="RL-based"><a href="#RL-based" class="headerlink" title="RL-based"></a>RL-based</h2><p>因为展示给用户的结果是一条接着一条的，也就是一个队列的形式，所以最近的动态ads allocation策略通常会把这个问题看作是Markov Decision Process（MDP）。既然是一个MDP问题，那么就很理所当然可以采用强化学习来解决。</p>
+<p>在cross DQN这篇文章中，作者们不但考虑了整体收益的目标，同时也考虑了广告曝光占比（percentage of ads exposed，PAE）的限制。因为在结果页展示越多的广告，毫无疑问可能带来越多的收益，但是同时也会对用户体验造成负面影响。因此，应该在用户体验与平台收益之间做一个平衡，这个平衡就由PAE限制来保证。</p>
+<p>因为加入了PAE的限制，所以前面说的MDP问题就转成了Constrained Markov Decision Process（CMDP）问题，问题可以由<img src="http://latex.codecogs.com/svg.latex?(%5Cmathit%7BS,A,r,P,%5Cgamma,C%7D)">表示，中各元素的定义为：</p>
+<ol>
+<li>State space <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BS%7D">：当前步可填入的候选元素（包括ads、自然结果、用户、上下文等等）</li>
+<li>Action space <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BA%7D">：决定要不要在当前步展示广告，1表示展示，0表示不展示。</li>
+<li>Reward <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7Br%7D">：由用户行为来决定在一个state采取某个action的奖励，奖励=收益+ a*用户体验；用户体验为0（不点击），1（点击不下单），2（点击且下单）</li>
+<li>Transition probability <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BP%7D"></li>
+<li>Discount factor <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7B%5Cgamma%7D">：<img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7B%5Cgamma%7D%5Cin%5B0,1%5D">用来平衡长期和短期的奖励。</li>
+<li>Constraint <img src="http://latex.codecogs.com/svg.latex?%5Cmathit%7BC%7D">：一个时间段内的广告曝光占比限制，<img src="http://latex.codecogs.com/svg.latex?%7CPAE-%5Cdelta%7C%3C%5Cvarepsilon">.</li>
+</ol>
 
           
         
