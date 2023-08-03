@@ -22,7 +22,7 @@ jobs:
           node-version: '14'
 
       - name: Get yarn cache
-        id: npm-cache
+        id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Cache dependencies
