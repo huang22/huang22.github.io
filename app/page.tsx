@@ -36,7 +36,7 @@ export default function HomePage() {
                 <h3 className="mb-1 font-medium text-lg text-black">a static picture</h3>
                 <Image
                   alt="a static picture"
-                  src="/bull.png"
+                  src="/images/bull.png"
                   className="w-full object-cover h-96 rounded-2xl"
                   width={400}
                   height={400}
@@ -48,7 +48,7 @@ export default function HomePage() {
                   alt="3d object"
                   width={400}
                   height={400}
-                  src="/bull.gif"
+                  src="/images/bull.gif"
                   className="w-full object-cover h-96 rounded-2xl sm:mt-0 mt-2"
                 />
               </div>

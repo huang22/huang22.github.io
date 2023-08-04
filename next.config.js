@@ -9,8 +9,8 @@
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  images: {
-    domains: ["upcdn.io", "replicate.delivery"],
+    images: {
+      unoptimized: true 
   },
 }
  
