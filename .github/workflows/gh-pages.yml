@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build my App
-        run: npm run build && npm run export
+        run: npm run build
         
       # - run: npm install --frozen-lockfile
       # - run: npm run build
