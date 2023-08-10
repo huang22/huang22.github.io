@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title,
   description,
   icons: {
-    icon: "/iamges/favicon.ico",
+    icon: "/images/favicon.ico",
   }
 };
 

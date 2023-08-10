@@ -31,27 +31,49 @@ export default function HomePage() {
         </Link>
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
           <div className="flex flex-col space-y-10 mt-4 mb-16">
-            <div className="flex sm:space-x-8 sm:flex-row flex-col">
-              <div>
-                <h3 className="mb-1 font-medium text-lg text-black">a static picture</h3>
+            <div className="flex sm:space-x-10 sm:flex-row flex-col">
+              <div className="flex space-y-10 mt-4 mb-16 sm:flex-col border-box">
+                <h3 className="font-bold text-black sm:text-2xl">a static picture</h3>
                 <Image
                   alt="a static picture"
-                  src="/images/bull.png"
-                  className="w-full object-cover h-96 rounded-2xl"
+                  src="/images/cats-dogs-breeds.jpg"
+                  className="w-full object-cover h-64 rounded-2xl"
                   width={400}
                   height={400}
                 />
               </div>
               <div className="sm:mt-0 mt-8">
-                <h3 className="mb-1 font-medium text-lg text-black">3d object</h3>
+                <h3 className="mb-1 font-medium text-lg text-black">cat in the middle</h3>
                 <Image
-                  alt="3d object"
+                  alt="cat-in-the-middle.gif"
                   width={400}
                   height={400}
-                  src="/images/bull.gif"
-                  className="w-full object-cover h-96 rounded-2xl sm:mt-0 mt-2"
+                  src="/images/cat-in-the-middle.gif"
+                  className="w-full object-cover h-32 rounded-2xl sm:mt-0 mt-2"
+                />
+   
+                <h3 className="mb-1 font-medium text-lg text-black">dog in the middle</h3>
+                <Image
+                  alt="dog-in-the-middle.gif"
+                  width={400}
+                  height={400}
+                  src="/images/dog-in-the-middle.gif"
+                  className="w-full object-cover h-32 rounded-2xl sm:mt-0 mt-2"
+                />
+              {/* </div>
+
+              <div className="sm:mt-0 mt-8"> */}
+                <h3 className="mb-1 font-medium text-lg text-black">dog on the right</h3>
+                <Image
+                  alt="dog-on-the-right.gif"
+                  width={400}
+                  height={400}
+                  src="/images/dog-on-the-right.gif"
+                  className="w-full object-cover h-32 rounded-2xl sm:mt-0 mt-2"
                 />
               </div>
+
+
             </div>
           </div>
         </div>
