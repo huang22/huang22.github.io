@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import SquigglyLines from "../components/SquigglyLines";
-
+import React from 'react';
+import styles from "../styles/layout.module.css";
 export default function HomePage() {
   return (
     <div className="flex max-w-8xl mx-auto flex-col items-center justify-center py-2 min-h-screen bg-white">
@@ -30,18 +29,26 @@ export default function HomePage() {
           Generate 3D object
         </Link>
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
-          <div className="flex flex-col space-y-10 mt-4 mb-16">
-            <div className="flex sm:space-x-10 sm:flex-row flex-col">
-              <div className="flex space-y-10 mt-4 mb-16 sm:flex-col border-box">
-                <h3 className="font-bold text-black sm:text-2xl">a static picture</h3>
+          <div className="flex flex-col space-y-10 mt-4 mb-16 bg-gray-200 rounded-2xl">
+            <div className="flex sm:space-x-10 sm:flex-row flex-col mt-20 mb-20 ml-20 mr-20">
+<div className="sm:mt-20 mb-10">
+              <div className={styles.container}>
+                 
                 <Image
-                  alt="a static picture"
+                  alt="a static image"
                   src="/images/cats-dogs-breeds.jpg"
                   className="w-full object-cover h-64 rounded-2xl"
                   width={400}
                   height={400}
                 />
+                </div>
+                <h3 className="mt-10 font-medium text-lg text-black bg-gray-100 rounded-xl"><b>A Static Image</b>
+                <p>This is a static image, and we can detect objects in it and convert them into 3D objects.</p>
+                <p>The generated 3D objects are shown on the right</p>
+                </h3> 
+                              
               </div>
+              <div className={styles.dashedDiv}>
               <div className="sm:mt-0 mt-8">
                 <h3 className="mb-1 font-medium text-lg text-black">cat in the middle</h3>
                 <Image
@@ -51,8 +58,8 @@ export default function HomePage() {
                   src="/images/cat-in-the-middle.gif"
                   className="w-full object-cover h-32 rounded-2xl sm:mt-0 mt-2"
                 />
-   
-                <h3 className="mb-1 font-medium text-lg text-black">dog in the middle</h3>
+                </div>
+                <h3 className="mb-2 font-medium text-lg text-black">dog in the middle</h3>
                 <Image
                   alt="dog-in-the-middle.gif"
                   width={400}
@@ -60,9 +67,6 @@ export default function HomePage() {
                   src="/images/dog-in-the-middle.gif"
                   className="w-full object-cover h-32 rounded-2xl sm:mt-0 mt-2"
                 />
-              {/* </div>
-
-              <div className="sm:mt-0 mt-8"> */}
                 <h3 className="mb-1 font-medium text-lg text-black">dog on the right</h3>
                 <Image
                   alt="dog-on-the-right.gif"
@@ -72,10 +76,8 @@ export default function HomePage() {
                   className="w-full object-cover h-32 rounded-2xl sm:mt-0 mt-2"
                 />
               </div>
-
-
-            </div>
           </div>
+        </div>
         </div>
       </main>
       {/* <Footer /> */}
