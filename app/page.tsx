@@ -43,7 +43,7 @@ export default function HomePage() {
                 />
                 </div>
                 <h3 className="mt-10 font-medium text-lg text-black bg-gray-100 rounded-xl"><b>A Static Image</b>
-                <p>This is a static image, and we can detect objects in it and convert them into 3D objects.</p>
+                <p>This is a static image, we can detect objects in it and convert them into 3D objects.</p>
                 <p>The generated 3D objects are shown on the right</p>
                 </h3> 
                               
