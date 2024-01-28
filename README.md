@@ -1,19 +1,20 @@
+# Minghui Huang
 
-## PRINCIPAL INTERESTS
+## Principal Interests
 Natural language processing, information retrieval.
 
  
-## EDUCATION
+## Education
 
-## TEACHING  EXPERIENCE 
-
-
-## RESEARCH EXPERIENCE
+## Teaching  Experience 
 
 
-## PROFESSIONAL SERVICE 
+## Research Experience
 
 
-## INDUSTRY EXPERIENCE
+## Professional Service 
 
-## PAPERS
+
+## Industry Experience
+
+## Papers
