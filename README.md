@@ -1,1 +1,18 @@
-# Minghui Huang
+# PRINCIPAL INTERESTS
+Natural language processing, information retrieval.
+
+ 
+# EDUCATION
+
+# TEACHING  EXPERIENCE 
+
+
+# RESEARCH EXPERIENCE
+
+
+# PROFESSIONAL SERVICE 
+
+
+# INDUSTRY EXPERIENCE
+
+# PAPERS
