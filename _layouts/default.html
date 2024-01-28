@@ -14,21 +14,9 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
-
-        <ul class="links">
-            <li><a href="{https://scholar.google.com/citations?user=BCDtvEEAAAAJ}">Google Scholar</a></li>
-            <li><a href="{huangmh25@gmail.com}">Email</a></li>
-        </ul>
-      </header>
-      <section>
 
       {{ content }}
 
-      </section>
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
