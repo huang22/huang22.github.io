@@ -1,5 +1,5 @@
 # Minghui Huang
-I obtained my B.Eng. degree from Sun Yat-sen University (SYSU) in 2018. I worked in the SentiNet Group under Prof. Rao Yanghui. My research focuses on natural language processing, information retrieval and sentiment analysis.
+I obtained my B.Eng. degree from Sun Yat-sen University (SYSU) in 2018. I worked in the SentiNet Group under [Prof. Rao Yanghui](https://cse.sysu.edu.cn/content/2471). My research focuses on natural language processing, information retrieval and sentiment analysis.
 
 ## Education
 - 2014-2018, B.Eng., [Sun Yat-sen University](http://www.sysu.edu.cn/), School of Computer Science and Engineering
@@ -13,4 +13,4 @@ I obtained my B.Eng. degree from Sun Yat-sen University (SYSU) in 2018. I worked
 - **Minghui Huang**, Yanghui Rao, Yuwei Liu, Haoran Xie, Fu Lee Wang. [Siamese network-based supervised topic modeling](https://aclweb.org/anthology/D18-1494). EMNLP. 2018: 4652-4662.
 
 ## Service
-Reviewer: ACL, EMNLP, NAACL, ICLR, NeurIPS, ICML; JAIR
+Reviewer: ACL, EMNLP
