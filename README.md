@@ -13,4 +13,8 @@ I obtained my B.Eng. degree from Sun Yat-sen University (SYSU) in 2018. I worked
 - **Minghui Huang**, Yanghui Rao, Yuwei Liu, Haoran Xie, Fu Lee Wang. [Siamese network-based supervised topic modeling](https://aclweb.org/anthology/D18-1494). EMNLP. 2018: 4652-4662.
 
 ## Service
-Reviewer: EMNLP 2021, EMNLP 2025 Workshop WiNLP, NAACL 2025 Demo Track, ACL ARR 2024-2025
+Reviewer: 
+- ACL ARR 2024-2025
+- EMNLP 2025 Workshop WiNLP
+- NAACL 2025 Demo Track
+- EMNLP 2021
